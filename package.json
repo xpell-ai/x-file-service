@@ -1,0 +1,96 @@
+{
+  "name": "@xpell/file-service",
+  "version": "0.1.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Canonical Xpell file reference, server storage service, and browser upload client.",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "type": "module",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./server": {
+      "types": "./dist/server/index.d.ts",
+      "import": "./dist/server/index.js"
+    },
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "import": "./dist/client/index.js"
+    },
+    "./shared": {
+      "types": "./dist/shared/index.d.ts",
+      "import": "./dist/shared/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "test": "npm run build && tsc -p tsconfig.test.json && node dist-tests/tests/file-service.test.js"
+  },
+  "xpell": {
+    "_tests": [
+      {
+        "_id": "file-service.script.test",
+        "_title": "@xpell/file-service test script",
+        "_owner": "@xpell/file-service",
+        "_suite": "file-service.package",
+        "_scope": "package",
+        "_runtime": "node",
+        "_description": "Builds and runs the File Service V1 Phase 2B tests.",
+        "_profiles": [
+          "file-service.package"
+        ],
+        "_tags": [
+          "package",
+          "client",
+          "server",
+          "files"
+        ],
+        "_entry": {
+          "_type": "script",
+          "_script": "test"
+        }
+      }
+    ],
+    "_test_profiles": [
+      {
+        "_id": "file-service.package",
+        "_title": "@xpell/file-service package verification",
+        "_includes": [
+          "file-service.*"
+        ],
+        "_tags": [
+          "package",
+          "server"
+        ]
+      }
+    ]
+  },
+  "author": "Tamir Fridman <fridman.tamir@gmail.com> (https://github.com/fridman-tamir)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xpell-ai/xpell-node"
+  },
+  "dependencies": {
+    "@xpell/core": "workspace:*",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
