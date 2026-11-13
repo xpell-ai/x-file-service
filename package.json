@@ -7,7 +7,9 @@
   "description": "Canonical Xpell file reference, server storage service, and browser upload client.",
   "files": [
     "dist",
-    "README.md"
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "type": "module",
   "types": "./dist/index.d.ts",
@@ -79,7 +81,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xpell-ai/xpell-node"
+    "url": "git+https://github.com/xpell-ai/x-file-service.git"
   },
   "dependencies": {
     "@xpell/core": "workspace:*",
