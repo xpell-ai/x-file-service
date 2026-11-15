@@ -1,5 +1,11 @@
 # @xpell/file-service
 
+## Supporting release candidate
+
+Version **0.1.0** supports the coordinated Xpell 2.0.8 candidate. Target date:
+**13 November 2026**; not published. See [CHANGELOG](./CHANGELOG.md) and
+the [MIT license](./LICENSE). The package retains its independent version.
+
 Canonical Xpell File Service V1 server module.
 
 Phase 2B provides the shared `xpell-file-ref` V1 contract, a safe server-side file store under `<work_folder>/files`, image validation for JPEG/PNG/WebP, app/env-scoped metadata, temp cleanup, public metadata/delete/promote ops, authenticated upload-slot creation, one-time multipart HTTP upload, a browser-side `file-client`, and a trusted server-only resolver for consuming modules.
